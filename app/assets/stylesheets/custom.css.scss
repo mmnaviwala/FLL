@@ -1,7 +1,7 @@
 @import "bootstrap";
 
 
-/****************** universal table formatting /******************/
+/****************** universal table formatting ******************/
 .table th,
 .table td {
   white-space: nowrap;
@@ -11,8 +11,6 @@
 .table th {
   text-align: center;
 }
-
-
 
 /* mixins, variables, etc. */
 
@@ -24,7 +22,8 @@ $grayMediumLight: #eaeaea;
   box-sizing: border-box;
 }
 
-/* universal */
+
+/****************** universal ******************/
 
 html {
   overflow-y: scroll;
@@ -32,6 +31,7 @@ html {
 
 body {
   padding-top: 60px;
+
 }
 
 section {
@@ -44,12 +44,21 @@ textarea {
 
 .center {
   text-align: center;
-  h1 {
-    margin-bottom: 10px;
-  }
 }
 
-/* typography */
+.center h1 {
+  margin-bottom: 10px;
+}
+
+body {
+  padding: 60px;
+}
+
+.center {
+  text-align: center;
+}
+
+/****************** typography ******************/
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
@@ -233,53 +242,6 @@ input {
   }
 }
 
-/* microposts */
-
-.microposts {
-  list-style: none;
-  margin: 10px 0 0 0;
-  
-  li {
-    padding: 10px 0;
-    border-top: 1px solid #e8e8e8;
-  }
-}
-
-.content {
-  display: block;
-}
-
-.timestamp {
-  color: #999;
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
-}
-
-.testimonialcontent {
-	height:10px;
-	width:10px;	
-}
-
-.carousel-inner {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.row {
-  padding-left: 10px;
-  margin-left: -20px;
-  *zoom: 1;
-}
-
-//Change carousel arrow visability on hover
-.carousel .carousel-control { visibility: hidden; }
-.carousel:hover .carousel-control { visibility: visible; }
 
 //change table hover color
 .table-hover tbody tr:hover > td,
@@ -311,40 +273,6 @@ aside {
 //Align table data to the left, change th to target tag
 .table th {
    text-align: left;   
-}
-
-.btn-custom-blue {
-  background-color: hsl(220, 100%, 30%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#0054ff", endColorstr="#003299");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#0054ff), to(#003299));
-  background-image: -moz-linear-gradient(top, #0054ff, #003299);
-  background-image: -ms-linear-gradient(top, #0054ff, #003299);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0054ff), color-stop(100%, #003299));
-  background-image: -webkit-linear-gradient(top, #0054ff, #003299);
-  background-image: -o-linear-gradient(top, #0054ff, #003299);
-  background-image: linear-gradient(#0054ff, #003299);
-  border-color: #003299 #003299 hsl(220, 100%, 25%);
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
-  -webkit-font-smoothing: antialiased;
-}
-
-.btn-custom-red {
-  background-color: hsl(0, 69%, 35%) !important;
-  background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#db3d3d", endColorstr="#961b1b");
-  background-image: -khtml-gradient(linear, left top, left bottom, from(#db3d3d), to(#961b1b));
-  background-image: -moz-linear-gradient(top, #db3d3d, #961b1b);
-  background-image: -ms-linear-gradient(top, #db3d3d, #961b1b);
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #db3d3d), color-stop(100%, #961b1b));
-  background-image: -webkit-linear-gradient(top, #db3d3d, #961b1b);
-  background-image: -o-linear-gradient(top, #db3d3d, #961b1b);
-  background-image: linear-gradient(#db3d3d, #961b1b);
-  border-color: #961b1b #961b1b hsl(0, 69%, 30%);
-  color: #fff !important;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.33);
-  -webkit-font-smoothing: antialiased;
 }
 
 

@@ -1,0 +1,20 @@
+<b>Commands</b>
+
+
+rails g scaffold User first_name:string last_name:string street:string city:string zip:integer state:string area_code:integer phone_number:integer role:string console
+
+rails g scaffold Project team_number:integer problem_identification:integer sources_of_information:integer problem_analysis:integer review_existing_solutions:integer team_solution:integer innovation:integer implementation:integer sharing:integer creativity:integer presentation_effectiveness:integer research_total:integer innovative_solution_total:integer presentation_total:integer project_total:integer
+
+rails g scaffold Core_values team_number:integer discovery:integer team_spirit:integer integration:integer effectiveness:integer efficiency:integer kids_do_the_work:integer inclusion:integer respect:integer coopertition:integer inspiration_total:integer teamwork_total:integer gracious_professionalism_total:integer core_value_total:integer 
+
+rails g scaffold Robot_design team_number:integer durability:integer mechanical_efficiency:integer mechanization:integer programming_quality:integer programming_efficiency:integer automation_navigation:integer design_process:integer mission_strategy:integer innovation:integer mechanical_design_total:integer programming_total:integer strategy_innovation_total:integer robot_design_total:integer 
+
+rails g controller static_pages home about help
+
+rails g controller search search_results
+
+rails g devise:install
+
+rails g devise User
+
+rails g devise:views

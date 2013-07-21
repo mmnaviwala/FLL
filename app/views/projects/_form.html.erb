@@ -1,0 +1,77 @@
+<%= form_for(@project) do |f| %>
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :team_number %><br />
+    <%= f.number_field :team_number %>
+  </div>
+  <div class="field">
+    <%= f.label :problem_identification %><br />
+    <%= f.number_field :problem_identification %>
+  </div>
+  <div class="field">
+    <%= f.label :sources_of_information %><br />
+    <%= f.number_field :sources_of_information %>
+  </div>
+  <div class="field">
+    <%= f.label :problem_analysis %><br />
+    <%= f.number_field :problem_analysis %>
+  </div>
+  <div class="field">
+    <%= f.label :review_existing_solutions %><br />
+    <%= f.number_field :review_existing_solutions %>
+  </div>
+  <div class="field">
+    <%= f.label :team_solution %><br />
+    <%= f.number_field :team_solution %>
+  </div>
+  <div class="field">
+    <%= f.label :innovation %><br />
+    <%= f.number_field :innovation %>
+  </div>
+  <div class="field">
+    <%= f.label :implementation %><br />
+    <%= f.number_field :implementation %>
+  </div>
+  <div class="field">
+    <%= f.label :sharing %><br />
+    <%= f.number_field :sharing %>
+  </div>
+  <div class="field">
+    <%= f.label :creativity %><br />
+    <%= f.number_field :creativity %>
+  </div>
+  <div class="field">
+    <%= f.label :presentation_effectiveness %><br />
+    <%= f.number_field :presentation_effectiveness %>
+  </div>
+  <div class="field">
+    <%= f.label :research_total %><br />
+    <%= f.number_field :research_total %>
+  </div>
+  <div class="field">
+    <%= f.label :innovative_solution_total %><br />
+    <%= f.number_field :innovative_solution_total %>
+  </div>
+  <div class="field">
+    <%= f.label :presentation_total %><br />
+    <%= f.number_field :presentation_total %>
+  </div>
+  <div class="field">
+    <%= f.label :project_total %><br />
+    <%= f.number_field :project_total %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

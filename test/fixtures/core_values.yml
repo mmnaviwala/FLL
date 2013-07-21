@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_number: 1
+  discovery: 1
+  team_spirit: 1
+  integration: 1
+  effectiveness: 1
+  efficiency: 1
+  kids_do_the_work: 1
+  inclusion: 1
+  respect: 1
+  coopertition: 1
+  inspiration_total: 1
+  teamwork_total: 1
+  gracious_professionalism_total: 1
+  core_value_total: 1
+
+two:
+  team_number: 1
+  discovery: 1
+  team_spirit: 1
+  integration: 1
+  effectiveness: 1
+  efficiency: 1
+  kids_do_the_work: 1
+  inclusion: 1
+  respect: 1
+  coopertition: 1
+  inspiration_total: 1
+  teamwork_total: 1
+  gracious_professionalism_total: 1
+  core_value_total: 1

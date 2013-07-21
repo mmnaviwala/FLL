@@ -1,4 +1,23 @@
 FLL::Application.routes.draw do
+  get "search/search_results"
+
+  get "static_pages/home"
+
+  get "static_pages/about"
+
+  get "static_pages/help"
+
+  resources :robot_designs
+
+  resources :core_values
+
+  resources :projects
+
+  resources :users
+
+  root to: 'static_pages#home'
+
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

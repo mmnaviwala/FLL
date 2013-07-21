@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_number: 1
+  durability: 1
+  mechanical_efficiency: 1
+  mechanization: 1
+  programming_quality: 1
+  programming_efficiency: 1
+  automation_navigation: 1
+  design_process: 1
+  mission_strategy: 1
+  innovation: 1
+  mechanical_design_total: 1
+  programming_total: 1
+  strategy_innovation_total: 1
+  robot_design_total: 1
+
+two:
+  team_number: 1
+  durability: 1
+  mechanical_efficiency: 1
+  mechanization: 1
+  programming_quality: 1
+  programming_efficiency: 1
+  automation_navigation: 1
+  design_process: 1
+  mission_strategy: 1
+  innovation: 1
+  mechanical_design_total: 1
+  programming_total: 1
+  strategy_innovation_total: 1
+  robot_design_total: 1

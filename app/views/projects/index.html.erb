@@ -1,0 +1,51 @@
+<h1>Listing projects</h1>
+
+<table>
+  <tr>
+    <th>Team number</th>
+    <th>Problem identification</th>
+    <th>Sources of information</th>
+    <th>Problem analysis</th>
+    <th>Review existing solutions</th>
+    <th>Team solution</th>
+    <th>Innovation</th>
+    <th>Implementation</th>
+    <th>Sharing</th>
+    <th>Creativity</th>
+    <th>Presentation effectiveness</th>
+    <th>Research total</th>
+    <th>Innovative solution total</th>
+    <th>Presentation total</th>
+    <th>Project total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%= project.team_number %></td>
+    <td><%= project.problem_identification %></td>
+    <td><%= project.sources_of_information %></td>
+    <td><%= project.problem_analysis %></td>
+    <td><%= project.review_existing_solutions %></td>
+    <td><%= project.team_solution %></td>
+    <td><%= project.innovation %></td>
+    <td><%= project.implementation %></td>
+    <td><%= project.sharing %></td>
+    <td><%= project.creativity %></td>
+    <td><%= project.presentation_effectiveness %></td>
+    <td><%= project.research_total %></td>
+    <td><%= project.innovative_solution_total %></td>
+    <td><%= project.presentation_total %></td>
+    <td><%= project.project_total %></td>
+    <td><%= link_to 'Show', project %></td>
+    <td><%= link_to 'Edit', edit_project_path(project) %></td>
+    <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Project', new_project_path %>

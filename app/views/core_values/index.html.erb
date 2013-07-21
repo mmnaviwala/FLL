@@ -1,0 +1,49 @@
+<h1>Listing core_values</h1>
+
+<table>
+  <tr>
+    <th>Team number</th>
+    <th>Discovery</th>
+    <th>Team spirit</th>
+    <th>Integration</th>
+    <th>Effectiveness</th>
+    <th>Efficiency</th>
+    <th>Kids do the work</th>
+    <th>Inclusion</th>
+    <th>Respect</th>
+    <th>Coopertition</th>
+    <th>Inspiration total</th>
+    <th>Teamwork total</th>
+    <th>Gracious professionalism total</th>
+    <th>Core value total</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @core_values.each do |core_value| %>
+  <tr>
+    <td><%= core_value.team_number %></td>
+    <td><%= core_value.discovery %></td>
+    <td><%= core_value.team_spirit %></td>
+    <td><%= core_value.integration %></td>
+    <td><%= core_value.effectiveness %></td>
+    <td><%= core_value.efficiency %></td>
+    <td><%= core_value.kids_do_the_work %></td>
+    <td><%= core_value.inclusion %></td>
+    <td><%= core_value.respect %></td>
+    <td><%= core_value.coopertition %></td>
+    <td><%= core_value.inspiration_total %></td>
+    <td><%= core_value.teamwork_total %></td>
+    <td><%= core_value.gracious_professionalism_total %></td>
+    <td><%= core_value.core_value_total %></td>
+    <td><%= link_to 'Show', core_value %></td>
+    <td><%= link_to 'Edit', edit_core_value_path(core_value) %></td>
+    <td><%= link_to 'Destroy', core_value, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Core value', new_core_value_path %>

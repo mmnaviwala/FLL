@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  team_number: 1
+  problem_identification: 1
+  sources_of_information: 1
+  problem_analysis: 1
+  review_existing_solutions: 1
+  team_solution: 1
+  innovation: 1
+  implementation: 1
+  sharing: 1
+  creativity: 1
+  presentation_effectiveness: 1
+  research_total: 1
+  innovative_solution_total: 1
+  presentation_total: 1
+  project_total: 1
+
+two:
+  team_number: 1
+  problem_identification: 1
+  sources_of_information: 1
+  problem_analysis: 1
+  review_existing_solutions: 1
+  team_solution: 1
+  innovation: 1
+  implementation: 1
+  sharing: 1
+  creativity: 1
+  presentation_effectiveness: 1
+  research_total: 1
+  innovative_solution_total: 1
+  presentation_total: 1
+  project_total: 1

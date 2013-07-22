@@ -1,5 +1,38 @@
 <% if current_user.role == "Admin" %>
-<h1>Admin</h1>
+<h1>Administrator Console</h1>
+
+<div class="buttons_row">
+	<nav>
+		<ul>
+			<li><%= link_to 'New User', users_new_path , :class => 'button_purple'  %><div style="padding-top: 7px;">Create new user</div></li>
+			<li><%= link_to 'All Users', users_path , :class => 'button_green'  %> <div style="padding-top: 7px;">View all users</div></li>
+		</ul>
+	</nav>
+</div>
+
+<hr class="console_hr">
+
+<div class="buttons_row">
+	<nav>
+		<ul>
+			<li><%= link_to 'Core Values', core_values_path , :class => 'button_blue'  %><div style="padding-top: 7px;">View all entries for core values</div></li>
+			<li><%= link_to 'Robot Design', robot_designs_path , :class => 'button_red'  %> <div style="padding-top: 7px;">View all entries for robot design</div></li>
+			<li><%= link_to 'Projects', projects_path , :class => 'button_orange'  %> <div style="padding-top: 7px;">View all entries for projects</div></li>
+		</ul>
+	</nav>
+</div>
+
 <% else %>
-<h1>Judge</h1>
+<h1>Judge Console</h1>
+
+<div class="buttons_row">
+	<nav>
+		<ul>
+			<li><%= link_to 'Core Values', core_values_path , :class => 'button_blue'  %><div style="padding-top: 7px;">View all entries for core values</div></li>
+			<li><%= link_to 'Robot Design', robot_designs_path , :class => 'button_red'  %> <div style="padding-top: 7px;">View all entries for robot design</div></li>
+			<li><%= link_to 'Projects', projects_path , :class => 'button_orange'  %> <div style="padding-top: 7px;">View all entries for projects</div></li>
+		</ul>
+	</nav>
+</div>
+
 <% end %>

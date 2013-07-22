@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<% if (signed_in? && current_user.role == "Admin") || (current_user.email == @user.email) %>
 
 <p>
   <b>First name:</b>
@@ -45,11 +45,12 @@
   <%= @user.role %>
 </p>
 
-<p>
-  <b>Console:</b>
-  <%= @user.console %>
-</p>
-
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+
+<% else %>
+
+<h2>You can't view others profile !</h2>
+
+<% end %>

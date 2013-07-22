@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   helper_method :sort_column, :sort_direction
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /projects
   # GET /projects.json
   def index

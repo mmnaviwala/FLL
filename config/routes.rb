@@ -9,6 +9,11 @@ FLL::Application.routes.draw do
   get "static_pages/help"
 
   get "users/console"
+  get "users/new"
+  get "users/index"
+  get "core_values/index"
+  get "robot_designs/index"
+  get "projects/index"
 
   match '/about', to: 'static_pages#about'
   match '/help', to: 'static_pages#help'

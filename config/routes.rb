@@ -1,13 +1,14 @@
 FLL::Application.routes.draw do
-  devise_for :users
+  devise_for :users do
+    get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
+  end
 
   get "search/search_results"
-
   get "static_pages/home"
-
   get "static_pages/about"
-
   get "static_pages/help"
+
+  get "users/console"
 
   match '/about', to: 'static_pages#about'
   match '/help', to: 'static_pages#help'

@@ -1,49 +1,70 @@
-<h1>Listing robot_designs</h1>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
+<script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
+<script type="text/javascript">
+  $(document).ready(function () {
+    $('[rel="tooltip"]').tooltip({
+      'selector': '',
+      'placement': 'top'
+  });
+});
+</script>
 
-<table>
-  <tr>
-    <th>Team number</th>
-    <th>Durability</th>
-    <th>Mechanical efficiency</th>
-    <th>Mechanization</th>
-    <th>Programming quality</th>
-    <th>Programming efficiency</th>
-    <th>Automation navigation</th>
-    <th>Design process</th>
-    <th>Mission strategy</th>
-    <th>Innovation</th>
-    <th>Mechanical design total</th>
-    <th>Programming total</th>
-    <th>Strategy innovation total</th>
-    <th>Robot design total</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
-<% @robot_designs.each do |robot_design| %>
+<h1>Robot Design</h1>
+<br>
+
+<table class = "table table-bordered table-striped table table-hover pretty">
   <tr>
-    <td><%= robot_design.team_number %></td>
-    <td><%= robot_design.durability %></td>
-    <td><%= robot_design.mechanical_efficiency %></td>
-    <td><%= robot_design.mechanization %></td>
-    <td><%= robot_design.programming_quality %></td>
-    <td><%= robot_design.programming_efficiency %></td>
-    <td><%= robot_design.automation_navigation %></td>
-    <td><%= robot_design.design_process %></td>
-    <td><%= robot_design.mission_strategy %></td>
-    <td><%= robot_design.innovation %></td>
-    <td><%= robot_design.mechanical_design_total %></td>
-    <td><%= robot_design.programming_total %></td>
-    <td><%= robot_design.strategy_innovation_total %></td>
-    <td><%= robot_design.robot_design_total %></td>
-    <td><%= link_to 'Show', robot_design %></td>
-    <td><%= link_to 'Edit', edit_robot_design_path(robot_design) %></td>
-    <td><%= link_to 'Destroy', robot_design, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+    <th><%= tooltip (sortable "team_number" , "Team #") , { :tooltip => 'Team #' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "durability" , "D") , { :tooltip => 'Durability' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "mechanical_efficiency" , "ME") , { :tooltip => 'Mechanical Efficiency' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "mechanization" , "M") , { :tooltip => 'Mechanization' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "programming_quality" , "PQ") , { :tooltip => 'Programming Quality' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "programming_efficiency" , "PE") , { :tooltip => 'Programming Efficiency' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "automation_navigation" , "AN") , { :tooltip => 'Automation/Navigation' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "design_process" , "DP") , { :tooltip => 'Design Process' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "mission_strategy" , "MS") , { :tooltip => 'Mission Strategy' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "innovation" , "I") , { :tooltip => 'Innovation' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "mechanical_design_total" , "MDT") , { :tooltip => 'Mechanical Design Total' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "programming_total" , "PT") , { :tooltip => 'Programming Total' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "strategy_innovation_total" , "S&IT") , { :tooltip => 'Strategy & Innovation Total' }, :rel => 'tooltip' %></th>
+    <th><%= tooltip (sortable "robot_design_total" , "RDT") , { :tooltip => 'Robot Design Total' }, :rel => 'tooltip' %></th>
+    <% if signed_in? %>
+    <th></th>
+    <th></th>
+    <th></th>
+    <% end %>
+</tr>
+
+<% @robot_designs.each do |robotdesign| %>
+<tr>
+    <td><%= robotdesign.team_number %></td>
+    <td><%= robotdesign.durability %></td>
+    <td><%= robotdesign.mechanical_efficiency %></td>
+    <td><%= robotdesign.mechanization %></td>
+    <td><%= robotdesign.programming_quality %></td>
+    <td><%= robotdesign.programming_efficiency %></td>
+    <td><%= robotdesign.automation_navigation %></td>
+    <td><%= robotdesign.design_process %></td>
+    <td><%= robotdesign.mission_strategy %></td>
+    <td><%= robotdesign.innovation %></td>
+    <td><%= robotdesign.mechanical_design_total %></td>
+    <td><%= robotdesign.programming_total %></td>
+    <td><%= robotdesign.strategy_innovation_total %></td>
+    <td><%= robotdesign.robot_design_total %></td>
+    
+    <% if signed_in? %>
+    <td><%= link_to 'Show', robotdesign, :class => 'btn btn-mini btn-primary'  %></td>
+    <td><%= link_to 'Edit', edit_robot_design_path(robotdesign), :class => 'btn btn-mini' %></td>
+    <td><%= link_to 'Destroy', robotdesign, method: :delete, data: { confirm: 'Are you sure you ?' }, :class => 'btn btn-mini btn-danger' %></td>
+    <% end %>
+</tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Robot design', new_robot_design_path %>
+<% if signed_in? %>
+<%= link_to 'New Robot Design', new_robot_design_path,rel: :tooltip , title: 'Create a new entry' %>
+<% end %>

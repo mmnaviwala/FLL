@@ -1,4 +1,5 @@
 class ProjectsController < ApplicationController
+  helper_method :sort_column, :sort_direction
   # GET /projects
   # GET /projects.json
   def index
@@ -80,4 +81,15 @@ class ProjectsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  private
+  def sort_column
+    Project.column_names.include?(params[:sort]) ? params[:sort] : "project_total"
+  end
+  
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "desc"
+  end
+
+
 end

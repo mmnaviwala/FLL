@@ -1,2 +1,111 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- <meta http-equiv="refresh" content="60" /> -->
+
+</head>
+<body>
+
+	<!-- Round about carousel start -->
+	<ul id="roundabout_carousel">
+		<li>
+			<table class = "table table-bordered table-condensed pretty">
+				<th style="background-color:#70709F" colspan="5"><a href = "/core_values"><h1>Core Values: Top 5 Teams</h1></a></th>
+				<tr bgcolor="#9090B4">
+					<th>Team #</th>
+					<th>Inspiration Total</th>
+					<th>Team Work Total</th>
+					<th>Gracious Professionalism Total</th>
+					<th>Core Value Total</th>
+				</tr>
+
+				<% @core_values.take(5).each do |corevalue| %>
+				<tr bgcolor="#9090B4">
+					<td><%= corevalue.team_number %></td>
+					<td><%= corevalue.inspiration_total %></td>
+					<td><%= corevalue.teamwork_total %></td>
+					<td><%= corevalue.gracious_professionalism_total %></td>
+					<td><%= corevalue.core_value_total %></td>
+				</tr>
+				<% end %>
+
+			</table>
+		</li>
+
+		<li>
+			<table class = "table table-bordered table-condensed pretty">
+				<th style="background-color:#FF944D" colspan="5"><a href = "/projects"><h1>Project: Top 5 Teams</h1></a></th>
+				<tr bgcolor="#FFB280">
+					<th>Team #</th>
+					<th>Research Total</th>
+					<th>Innovative Solution Total</th>
+					<th>Presentation Total</th>
+					<th>Project Total</th>
+				</tr>
+
+				<% @projects.take(5).each do |project| %>
+				<tr bgcolor="#FFB280">
+					<td><%= project.team_number %></td>
+					<td><%= project.research_total %></td>
+					<td><%= project.innovative_solution_total %></td>
+					<td><%= project.presentation_total %></td>
+					<td><%= project.project_total %></td>
+				</tr>
+				<% end %>
+
+			</table>
+		</li>
+
+		<li>
+			<table class = "table table-bordered table-condensed pretty">
+				<th style="background-color:#93E6E6" colspan="5"><a href = "/robot_designs"><h1>Robot Design: Top 5 Teams</h1></a></th>
+				<tr bgcolor="#A3FFFF">
+					<th>Team #</th>
+					<th>Mechanical Design Total</th>
+					<th>Programming Total</th>
+					<th>Strategy/Innovation Total</th>
+					<th>Robot Design Total</th>
+				</tr>
+
+				<% @robot_designs.take(5).each do |robotdesign| %>
+				<tr bgcolor="#A3FFFF">
+					<td><%= robotdesign.team_number %></td>
+					<td><%= robotdesign.mechanical_design_total %></td>
+					<td><%= robotdesign.programming_total %></td>
+					<td><%= robotdesign.strategy_innovation_total %></td>
+					<td><%= robotdesign.robot_design_total %></td>
+				</tr>
+				<% end %>
+				
+			</table>
+		</li>
+		
+	</ul>
+	<!-- Round about carousel end-->
+	
+	<center>
+		<div class="btn-group">
+			<form action = "/core_values"><button class="btn">Core Values</button></form>
+		</div>
+		<div class="btn-group">
+			<form action = "/robot_designs"><button class="btn">Robot Design</button></form>
+		</div>
+		<div class="btn-group">
+			<form action = "/projects"><button class="btn">Project</button></form>
+		</div>
+	</center>
+
+
+	<script>
+		$(document).ready(function() {
+			$('ul#roundabout_carousel').roundabout({
+				autoplay: true,
+				autoplayDuration: 10000,
+				enableDrag: true,
+				autoplayPauseOnHover: true
+			});
+		});
+	</script>
+
+</body>
+</html>

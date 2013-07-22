@@ -4,6 +4,12 @@
 
 		<ul class="nav pull-right">
 
+			<!-- search from -->
+			<%= form_tag search_search_results_path, :method => 'get', :class => "navbar-search pull-left" do %>
+			<%= text_field_tag :search, params[:search], :placeholder => "Search by team number...", :class =>"input-large search-query" %>
+			<% end %>
+			<!-- search from -->
+
 			<li><%= link_to "Home", home_path %></li>
 			<li><%= link_to "About", about_path %></li>
 

@@ -15,6 +15,8 @@ FLL::Application.routes.draw do
   get "robot_designs/index"
   get "projects/index"
 
+  get "search/search_results"
+
   match '/about', to: 'static_pages#about'
   match '/help', to: 'static_pages#help'
   match '/home', to: 'static_pages#home'

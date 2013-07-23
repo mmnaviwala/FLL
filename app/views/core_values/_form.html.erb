@@ -1,73 +1,79 @@
 <%= form_for(@core_value) do |f| %>
-  <% if @core_value.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@core_value.errors.count, "error") %> prohibited this core_value from being saved:</h2>
+<% if @core_value.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@core_value.errors.count, "error") %> prohibited this core_value from being saved:</h2>
 
-      <ul>
-      <% @core_value.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :team_number %><br />
-    <%= f.number_field :team_number %>
-  </div>
-  <div class="field">
-    <%= f.label :discovery %><br />
-    <%= f.number_field :discovery %>
-  </div>
-  <div class="field">
-    <%= f.label :team_spirit %><br />
-    <%= f.number_field :team_spirit %>
-  </div>
-  <div class="field">
-    <%= f.label :integration %><br />
-    <%= f.number_field :integration %>
-  </div>
-  <div class="field">
-    <%= f.label :effectiveness %><br />
-    <%= f.number_field :effectiveness %>
-  </div>
-  <div class="field">
-    <%= f.label :efficiency %><br />
-    <%= f.number_field :efficiency %>
-  </div>
-  <div class="field">
-    <%= f.label :kids_do_the_work %><br />
-    <%= f.number_field :kids_do_the_work %>
-  </div>
-  <div class="field">
-    <%= f.label :inclusion %><br />
-    <%= f.number_field :inclusion %>
-  </div>
-  <div class="field">
-    <%= f.label :respect %><br />
-    <%= f.number_field :respect %>
-  </div>
-  <div class="field">
-    <%= f.label :coopertition %><br />
-    <%= f.number_field :coopertition %>
-  </div>
-  <div class="field">
-    <%= f.label :inspiration_total %><br />
-    <%= f.number_field :inspiration_total %>
-  </div>
-  <div class="field">
-    <%= f.label :teamwork_total %><br />
-    <%= f.number_field :teamwork_total %>
-  </div>
-  <div class="field">
-    <%= f.label :gracious_professionalism_total %><br />
-    <%= f.number_field :gracious_professionalism_total %>
-  </div>
-  <div class="field">
-    <%= f.label :core_value_total %><br />
-    <%= f.number_field :core_value_total %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <ul>
+    <% @core_value.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
 <% end %>
+
+<div class="row">
+  <div class="span6 offset5">
+
+    <div class="field">
+      <%= f.label :team_number %>
+      <%= f.text_field :team_number %>
+    </div>
+    <div class="field">
+      <%= f.label :discovery %>
+      <%= f.text_field :discovery %>
+    </div>
+    <div class="field">
+      <%= f.label :team_spirit %>
+      <%= f.text_field :team_spirit %>
+    </div>
+    <div class="field">
+      <%= f.label :integration %>
+      <%= f.text_field :integration %>
+    </div>
+    <div class="field">
+      <%= f.label :effectiveness %>
+      <%= f.text_field :effectiveness %>
+    </div>
+    <div class="field">
+      <%= f.label :efficiency %>
+      <%= f.text_field :efficiency %>
+    </div>
+    <div class="field">
+      <%= f.label :kids_do_the_work %>
+      <%= f.text_field :kids_do_the_work %>
+    </div>
+    <div class="field">
+      <%= f.label :inclusion %>
+      <%= f.text_field :inclusion %>
+    </div>
+    <div class="field">
+      <%= f.label :respect %>
+      <%= f.text_field :respect %>
+    </div>
+    <div class="field">
+      <%= f.label :coopertition %>
+      <%= f.text_field :coopertition %>
+    </div>
+    <div class="field">
+      <%= f.label :inspiration_total %>
+      <%= f.text_field :inspiration_total %>
+    </div>
+    <div class="field">
+      <%= f.label :teamwork_total %>
+      <%= f.text_field :teamwork_total %>
+    </div>
+    <div class="field">
+      <%= f.label :gracious_professionalism_total %>
+      <%= f.text_field :gracious_professionalism_total %>
+    </div>
+    <div class="field">
+      <%= f.label :core_value_total %>
+      <%= f.text_field :core_value_total %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Update Core Value", :class => "btn btn-primary btn-large"  %>
+    </div>
+    <% end %>
+
+  </div>
+</div>

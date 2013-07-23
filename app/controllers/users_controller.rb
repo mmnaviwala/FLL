@@ -4,12 +4,7 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    
-     if current_user.role == "Admin"
-      @users = User.all
-    elsif current_user.role == "Judge"
-      @users = User.where("role LIKE ? ", current_user.role)
-    end
+    @users = User.all
 
     respond_to do |format|
       format.html # index.html.erb

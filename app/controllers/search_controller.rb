@@ -4,9 +4,9 @@ class SearchController < ApplicationController
   	# @robot_designs = RobotDesign.all
   	# @projects = Project.all
 
-  	@core_values = CoreValue.where("team_number LIKE ? ", params[:search])
-  	@robot_designs = RobotDesign.where("team_number LIKE ? ", params[:search])
-  	@projects = Project.where("team_number LIKE ? ", params[:search])
+  	@core_values = CoreValue.where("team_number ILIKE ? ", "%#{params[:search]}%")
+  	@robot_designs = RobotDesign.where("team_number ILIKE ? ", "%#{params[:search]}%")
+  	@projects = Project.where("team_number ILIKE ? ", "%#{params[:search]}%")
 
   end
 end

@@ -1,3 +1,132 @@
-<h1>Search Result</h1>
+<h1>Search Results</h1>
 
-core_values reults: <%= @core_values.count %> <br>
+<% if @core_values.count > 0 %>
+<h4>Core Values</h4>
+<table class = "table table-bordered table-striped table table-condensed">
+		<!--
+		<td colspan="5" style="font-weight:bold; background-color: #E8E8E8; text-decoration:underline">Core Values</td>
+	-->
+
+	<tr>
+		<th>Team Number</th>
+		<th>Inspiration Total</th>
+		<th>Team Work Total</th>
+		<th>Gracious Professionalism Total</th>
+		<th>Core Value Total</th>
+		
+		<% if signed_in? %>
+		<th></th>
+		<th></th>
+		<th></th>
+		<% end %>
+
+	</tr>
+
+	<% @core_values.each do |cv| %>
+	<tr>
+		<td><%= cv.team_number %></td>
+		<td><%= cv.inspiration_total %></td>
+		<td><%= cv.teamwork_total %></td>
+		<td><%= cv.gracious_professionalism_total %></td>
+		<td><%= cv.core_value_total %></td>
+
+		<% if signed_in? %>
+		<td><%= link_to 'Show', cv, :class => 'btn btn-mini btn-primary'  %></td>
+		<td><%= link_to 'Edit', edit_core_value_path(cv), :class => 'btn btn-mini' %></td>
+		<td><%= link_to 'Destroy', cv, method: :delete, data: { confirm: 'Are you sure you ?' }, :class => 'btn btn-mini btn-danger' %></td>
+		<% end %>
+
+	</tr>
+	<% end %>
+</table>
+<br><br>
+<% end %>
+
+<% if @projects.count > 0 %>
+<h4>Project</h4>
+<table class = "table table-bordered table-striped table table-condensed">
+		<!--
+		<td colspan="5" style="font-weight:bold; background-color: #E8E8E8; text-decoration:underline">Core Values</td>
+	-->
+
+	<tr>
+		<th>Team Number</th>
+		<th>Research Total</th>
+		<th>Innovative Solution Total</th>
+		<th>Presentation Total</th>
+		<th>Project Total</th>
+
+		<% if signed_in? %>
+		<th></th>
+		<th></th>
+		<th></th>
+		<% end %>
+
+	</tr>
+
+	<% @projects.each do |p| %>
+	<tr>
+		<td><%= p.team_number %></td>
+		<td><%= p.research_total %></td>
+		<td><%= p.innovative_solution_total %></td>
+		<td><%= p.presentation_total %></td>
+		<td><%= p.project_total %></td>
+
+		<% if signed_in? %>
+		<td><%= link_to 'Show', p, :class => 'btn btn-mini btn-primary'  %></td>
+		<td><%= link_to 'Edit', edit_project_path(p), :class => 'btn btn-mini' %></td>
+		<td><%= link_to 'Destroy', p, method: :delete, data: { confirm: 'Are you sure you ?' }, :class => 'btn btn-mini btn-danger' %></td>
+		<% end %>
+
+	</tr>
+	<% end %>
+</table>
+<br><br>
+<% end %>
+
+
+<% if @robot_designs.count > 0 %>
+<h4>Robot Design</h4>
+<table class = "table table-bordered table-striped table table-condensed">
+		<!--
+		<td colspan="5" style="font-weight:bold; background-color: #E8E8E8; text-decoration:underline">Core Values</td>
+	-->
+
+	<tr>
+		<th>Team Number</th>
+		<th>Mechanical Design Total</th>
+		<th>Programming Total</th>
+		<th>Strategy/Innovation Total</th>
+		<th>Robot Design Total</th>
+
+		<% if signed_in? %>
+		<th></th>
+		<th></th>
+		<th></th>
+		<% end %>
+
+	</tr>
+
+	<% @robot_designs.each do |rd| %>
+	<tr>
+		<td><%= rd.team_number %></td>
+		<td><%= rd.mechanical_design_total %></td>
+		<td><%= rd.programming_total %></td>
+		<td><%= rd.strategy_innovation_total %></td>
+		<td><%= rd.robot_design_total %></td>
+
+		<% if signed_in? %>
+		<td><%= link_to 'Show', rd, :class => 'btn btn-mini btn-primary'  %></td>
+		<td><%= link_to 'Edit', edit_robot_design_path(rd), :class => 'btn btn-mini' %></td>
+		<td><%= link_to 'Destroy', rd, method: :delete, data: { confirm: 'Are you sure you ?' }, :class => 'btn btn-mini btn-danger' %></td>
+		<% end %>
+
+	</tr>
+	<% end %>
+</table>
+<br><br>
+<% end %>
+
+<% if @core_values.count == 0 && @projects.count == 0 && @robot_designs.count == 0 %>
+<center><br><h4>No results for your query</h4></center>
+<% end %>

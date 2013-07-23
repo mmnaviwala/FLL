@@ -15,7 +15,17 @@
 
 			<% if user_signed_in? %>
 			<li><%= link_to "Console", users_console_path %></li>
-			<li><%= link_to "Sign out", destroy_user_session_path %></li>
+
+			<li id="fat-menu" class="dropdown">
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown">My Account<b class="caret"></b>
+				</a>
+				<ul class="dropdown-menu">
+					<li><%= link_to "Edit Account", edit_user_path(current_user) %></li>
+					<li class="divider"></li>
+					<li><%= link_to "Sign out", destroy_user_session_path %></li>
+				</ul>
+			</li>
+
 			<% else %>
 			<li><%= link_to "Sign in", new_user_session_path %></li>
 			<% end %>

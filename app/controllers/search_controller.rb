@@ -1,12 +1,12 @@
 class SearchController < ApplicationController
   def search_results
-  	@search_core = CoreValue.all
-  	@search_robot = RobotDesign.all
-  	@search_project = Project.all
+  	# @core_values = CoreValue.all
+  	# @robot_designs = RobotDesign.all
+  	# @projects = Project.all
 
-  	@search_core = CoreValue.where("team_number LIKE ? ", params[:search])
-  	@search_robot = RobotDesign.where("team_number LIKE ? ", params[:search])
-  	@search_project = Project.where("team_number LIKE ? ", params[:search])
+  	@core_values = CoreValue.where("team_number LIKE ? ", params[:search])
+  	@robot_designs = RobotDesign.where("team_number LIKE ? ", params[:search])
+  	@projects = Project.where("team_number LIKE ? ", params[:search])
 
   end
 end

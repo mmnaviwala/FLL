@@ -10,7 +10,7 @@ class SearchController < ApplicationController
 
   	# @core_values = CoreValue.find(params[:search])
   	# @core_values = CoreValue.find(:conditions => ["team_number = ?", params[:search].to_i])
-  	@core_values = CoreValue.where("team_number LIKE ?", params[:search].to_i)
+  	@core_values = CoreValue.where("team_number = ?", params[:search].to_i)
 
   end
 end
